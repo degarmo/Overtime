@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Overtime #<%= @post.id %></h1>
+
+  <div>
+    <span>Submitted: </span><%= @post.created_at.strftime('%m-%d-%Y') %>
+  </div>
+  <div>
+    <span>For Date: </span><%= @post.date.strftime('%m-%d-%Y') %>
+  </div>
+  <div>
+    <span>Reason: </span><br>
+    <%= @post.rational %>
+  </div>
+
+</div>

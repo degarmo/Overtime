@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs|sm|md|lg|xl-1-12">
+
+      <%= form_for @post do |f| %>
+        <%= f.date_field :date %>
+        <%= f.text_area :rational %>
+        <%= f.submit "Save" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
