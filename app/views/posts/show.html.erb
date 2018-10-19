@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Overtime #<%= @post.id %></h1>
+  <h3>Overtime #<%= @post.id %></h3>
 
   <div>
     <span>Submitted: </span><%= @post.created_at.strftime('%m-%d-%Y') %>
@@ -13,4 +13,16 @@
   </div>
   <small>User #<%= @post.user_id %></small>
 
+  <div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Edit Submission
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><%= link_to "Edit", edit_post_path %></li>
+        <li><%= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure?"} %></li>
+      </ul>
+    </div>
+  </div>
 </div>

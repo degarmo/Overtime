@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :edit, :update]
   def index
-    @posts =  Post.all
-
+    @posts =  Post.all.limit(25)
   end
 
   def new
@@ -11,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.id 
+    @post.user_id = current_user.id
 
     if @post.save
       redirect_to @post, notice: 'Your Post Was Created!'
@@ -21,6 +20,23 @@ class PostsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def edit
+    set_post
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to @post, notice: "Your post was updated!"
+    else
+      render :edit
+    end
+  end
+
+
+  def destory
 
   end
 
